@@ -2,6 +2,7 @@
 
 int main(){
     LinkedList<int> stonesList;
-    stonesList.insertAtHead(9);
+    std::cout << stonesList;
+    stonesList.insertAtHead(2);
     std::cout << stonesList;
 }

@@ -2,19 +2,18 @@
 #include <iostream>
 #include <string>
 
-//Declarations
-
-template <typename T> class Node{
+template <typename T> 
+struct Node{
     public:
         T value = 0;
         Node<T>* next = nullptr;
 
 };
 
-template <typename T> class LinkedList{
+template <typename T> 
+class LinkedList{
     public:
         Node<T>* head;
-
         template <T>
         friend std::ostream& operator<<(std::ostream& os, const LinkedList<T>& ll);
     
@@ -29,16 +28,16 @@ template <typename T> class LinkedList{
 
     void insertAtHead(T data){
     
-        Node<T>* temp = new Node<T>;
-        temp->value = data;
+        Node<T> temp;
+        temp.value = data;
+        temp.next = nullptr;
 
         if(head==nullptr){
-            head = temp;
+            head = &temp;
         } else{
-            temp->next = head;
-            head = temp;
+            temp.next = head;
+            head = &temp;
         }
-        delete temp;
 }
 
     
@@ -50,10 +49,10 @@ std::ostream& operator<<(std::ostream& os, const LinkedList<T>& ll)
 {
     Node<T>* currNode = ll.head;
     if(currNode==nullptr){
-        os << "Empty List";
+        os << "Empty List\n";
         return os;
     }
-    os << scanf("%d",currNode->value);
+    os << currNode->value;
     return os;
 }
 
