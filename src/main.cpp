@@ -2,14 +2,9 @@
 
 int main(){
     LinkedList<char> stonesList;
-    stonesList.insertAtHead('B');
-    stonesList.insertAtTail('L');
-    stonesList.insertAtTail('A');
-    stonesList.insertAtTail('K');
-    stonesList.insertAtTail('E');
-    stonesList.insertAtTail('G');
-    stonesList.insertAtTail('A');
-    stonesList.insertAtTail('Y');
+    for(char i = 'A'; i<='Z'; i++){
+        stonesList.insertAtTail(i);
+    }
     std::cout << stonesList;
     
 }

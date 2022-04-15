@@ -49,6 +49,7 @@ class LinkedList{
 template <typename T>
 std::ostream& operator<<(std::ostream& os, const LinkedList<T>& ll)
 {
+    os << '{';
     Node<T>* currNode = ll.head;
     if(currNode==nullptr){
         os << "Empty List\n";
@@ -57,9 +58,9 @@ std::ostream& operator<<(std::ostream& os, const LinkedList<T>& ll)
     os << currNode->value;
     while(currNode->next!=nullptr){
         currNode = currNode->next;
-        os << ',' << ' ';
+        os << " -> ";
         os << currNode->value;
     }
-    os << '\n';
+    os << '}';
     return os;
 }
