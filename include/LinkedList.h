@@ -97,53 +97,9 @@ class LinkedList{
         return mergedList;
     }
 
-    //doesnt work;
+    //Turns out I need to learn sorting algotithms
     void sort(){
-        Node<T>* temp = head;
-        if(head==nullptr) std::cout << "Failed to sort, empty list.\n"; return;
-        if(head->next==nullptr) return;
 
-        //deterrmine size;
-        int tSize = 0;
-        while(head!=nullptr){
-            tSize++;
-            head=head->next;
-        }
-
-        //if its 2, sort elements
-        if(tSize==2){
-            head = temp;
-            if(head->value<=head->next->value){
-            } else{
-                head = head->next;
-                head->next = temp;
-                head->next=nullptr;
-            }
-        }
-
-        //else, find middle
-        head = temp;
-        for(int i=1;i<std::ceil(tSize/2);i++){
-            head=head->next;
-        }
-
-        //Create new split lists
-        LinkedList<T> listA;
-        listA.head = head->next;
-        head->next = nullptr;
-        head = temp;
-        LinkedList<T> listB;
-        listB.head = head;
-
-        //continue sorting as necesarry
-        if(tSize==3){
-            listA.sort();
-        } else if (tSize>3){
-            listA.sort();
-            listB.sort();
-        }
-
-        merge(listA,listB);
     }
 
 
