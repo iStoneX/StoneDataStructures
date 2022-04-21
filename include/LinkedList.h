@@ -97,11 +97,6 @@ class LinkedList{
         return mergedList;
     }
 
-    //Turns out I need to learn sorting algotithms
-    void sort(){
-
-    }
-
 
 };
 
